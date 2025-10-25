@@ -10,18 +10,36 @@
 
 
 
-   {% if items %}
+  {% if messages %}
+
+{% for message in messages %}
+
+   <p>{{message}}</p>
+
+{% endfor %}
+
+{% endif %}
+
+   {% if data %}
+
     <ul>
+    {% for items in data %}
         <li>id : {{items.id}}</li>
+        {% if items.image %}
+
+        <li>image: <img src="{{ items.image.url }}" alt=""> </li>
+        {% endif %}
         <li>title : {{items.title}}</li>
         <li>describtion: {{ items.describtion }}</li>
         <li>create at: {{ items.creat_at }}</li>
+       
         <br/>
+    {% endfor %}
     </ul>
+
     {% else %}
 
       <h2> No data found </h2>
-
     {% endif %}
 
 </body>

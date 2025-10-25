@@ -1,20 +1,15 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Add New Items</title>
-</head>
-<body>
+{% extends 'base.html' %}
+{% block title %} Add Items {% endblock %}
 
+
+{% block content %}
 <h2>Add Items</h2>
-
 
 {% if messages %}
 
 {% for message in messages %}
 
-   <p>{{message}}</p>
+<p>{{message}}</p>
 
 {% endfor %}
 
@@ -24,8 +19,7 @@
 <form action="{% url 'add-items' %}" enctype="multipart/form-data" method="post">
                {% csrf_token %}
                {{form.as_p}}
-<button type="submit" >Sumit</button>
+<button type="submit" class="bg-black text-white w-[100px] rounded-[10px]" >Sumit</button>
 </form>
                
-</body>
-</html>
+{% endblock  %} 

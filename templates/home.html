@@ -1,41 +1,16 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Document</title>
-</head>
-<body>
-<h1>{{html_title}}</h1> 
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %} View Items {% endblock %}
+
+   {% block content %}
+   
+     <h2>My Image</h2>
+
+    <div>
+        <img src="{% static '/image/39407347-1_3.webp' %}" height="300" width="300" alt="">
+      <input type="" placeholder="enter" name="">
+    </div>
+    
+   {% endblock %}
  
- {% if messages %}
-
-{% for message in messages %}
-
-   <p>{{message}}</p>
-
-{% endfor %}
-
-{% endif %}
-
-   {% if data %}
-
-    <ul>
-    {% for items in data %}
-        <li>id : {{items.id}}</li>
-        <li>image: <img src="{{ items.image.url }}" alt=""> </li>
-        <li>title : {{items.title}}</li>
-        <li>describtion: {{ items.describtion }}</li>
-        <li>create at: {{ items.creat_at }}</li>
-       
-        <br/>
-    {% endfor %}
-    </ul>
-
-    {% else %}
-
-      <h2> No data found </h2>
-    {% endif %}
-
-</body>
-</html>
