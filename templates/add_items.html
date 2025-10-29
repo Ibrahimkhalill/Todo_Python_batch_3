@@ -1,25 +1,3 @@
-{% extends 'base.html' %}
-{% block title %} Add Items {% endblock %}
-
-
-{% block content %}
-<h2>Add Items</h2>
-
-{% if messages %}
-
-{% for message in messages %}
-
-<p>{{message}}</p>
-
-{% endfor %}
-
-{% endif %}
-
-
-<form action="{% url 'add-items' %}" enctype="multipart/form-data" method="post">
-               {% csrf_token %}
-               {{form.as_p}}
-<button type="submit" class="bg-black text-white w-[100px] rounded-[10px]" >Sumit</button>
-</form>
-               
-{% endblock  %} 
+<ul>
+               <li></li>
+</ul>

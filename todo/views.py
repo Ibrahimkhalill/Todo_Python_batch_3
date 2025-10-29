@@ -5,8 +5,13 @@ from .models import Todo
 from .form import TodoForm 
 from django.contrib import messages
 
+
+
 def home(request):
-    return render(request, "home.html")
+    if request.user.is_authenticated:
+        return render(request, "home.html")
+    else:
+        return redirect('signin')
 
 
 def about(request):
