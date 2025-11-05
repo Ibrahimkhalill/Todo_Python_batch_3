@@ -42,9 +42,19 @@ INSTALLED_APPS = [
     'todo',
     'authentications',
     'rest_framework',
-    'rest_api'
+    'rest_api',
+    'rest_framework_simplejwt'
 ]
 
+
+REST_FRAMEWORK = {
+ 
+    'DEFAULT_AUTHENTICATION_CLASSES': (
+    
+        'rest_framework_simplejwt.authentication.JWTAuthentication',
+    )
+   
+}
 
 # REST_FRAMEWORK = {
 #     # Use Django's standard `django.contrib.auth` permissions,
@@ -137,7 +147,7 @@ DATABASES = {
     }
 }
 
-AUTH_USER_MODEL = 'authentications.CustomUser'
+
 
 # Password validation
 # https://docs.djangoproject.com/en/5.2/ref/settings/#auth-password-validators
